@@ -29,5 +29,3 @@ function shuffleArray(array) {
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
-
-console.log(shuffleArray([1, 2, 3, 4, 5]));
