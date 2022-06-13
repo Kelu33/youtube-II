@@ -63,7 +63,7 @@ button {
     color: var(--text-color);
     border-radius: 25px;
     background-color: var(--border-color);
-    border: solid 0.5px var(--text-color);
+    border: solid 0.5px var(--border-color);
 }
 
 #search:focus-visible {
@@ -178,4 +178,9 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+#error-message{
+    display: none;
+    color: var(--text-color);
 }

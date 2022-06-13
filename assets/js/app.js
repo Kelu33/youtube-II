@@ -3,6 +3,7 @@ const form = document.querySelector("form");
 const categoryNav = document.querySelector("#category");
 const suggestionBox = document.querySelector("#suggest");
 const submitButton = document.querySelector("#search");
+const noVidzMessage = document.querySelector("#error-message");
 
 let oldQuery = localStorage.getItem("oldQuery");
 if (oldQuery) oldQuery = oldQuery.split(",");
@@ -89,6 +90,12 @@ fetch("data.json")
   .catch((error) => console.log(error));
 
 function appendVidz(videoList, target) {
+  if (videoList.length === 0) {
+    noVidzMessage.style.display = "unset";
+    noVidzMessage.innerHTML = `There's no video with ${query.value} in the title`;
+    return;
+  }
+  noVidzMessage.style.display = "none";
   for (let video of videoList) {
     video.display(target);
   }
