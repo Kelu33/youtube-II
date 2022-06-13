@@ -4,16 +4,14 @@ fetch("data.json")
   .then((response) => response.json())
   .then((videoDataList) => {
     videoDataList = shuffleArray(videoDataList);
-    let video;
     for (let videoData of videoDataList) {
-      video = new Video(
+      new Video(
         videoData.src,
         videoData.title,
         videoData.thumbnail,
         videoData.account,
         videoData.info
-      );
-      video.display(container);
+      ).display(container);
     }
   })
   .catch((error) => console.log(error));
