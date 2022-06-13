@@ -33,11 +33,11 @@ nav {
 }
 
 form {
+    position: relative;
     display: flex;
     width: 60%;
     height: calc(100% - 2vh);
     border-radius: 3px;
-    overflow: hidden;
 }
 
 #query {
@@ -77,6 +77,29 @@ input, select, textarea{
 textarea:focus, input:focus {
     color: var(--text-color);
 }
+
+#suggest {
+    margin-top: 5vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background-color: var(--text-color);
+    width: 100%;
+    z-index: 99;
+    color: var(--bg-color);
+}
+
+/* .suggestion-link {
+    position: relative;
+    width: 100%;
+    color: var(--bg-color);
+    padding-bottom: 1vh;
+}
+.suggestion-link:hover {
+    color: var(--dark-bg-color);
+} */
 
 aside {
     background-color: var(--dark-bg-color);

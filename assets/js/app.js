@@ -1,6 +1,12 @@
 const container = document.querySelector("main");
 const form = document.querySelector('form');
 const categoryNav = document.querySelector('#category');
+const suggestionBox = document.querySelector('#suggest');
+const submitButton = document.querySelector('#search');
+
+
+let oldQuery = localStorage.getItem('oldQuery');
+if (!oldQuery) oldQuery = [];
 
 let filter;
 let href = window.location.href.split('?');
@@ -32,15 +38,46 @@ fetch("data.json")
     categoryNav.addEventListener('click', (e) => {
       e.preventDefault();
       removeVidz();
-      let filteredVidz = videoList.filter(video => video.category === e.target.innerText);
+      let filteredVidz = categoryFilter(videoList, e.target.innerText);
       appendVidz(filteredVidz, container);
     })
 
     form.addEventListener('input', (e) => {
       e.preventDefault();
+
       removeVidz();
       let query = e.target.value.toLowerCase();
-      let filteredVidz = titleFilter(videoList, query);        
+      let filteredVidz = titleFilter(videoList, query); 
+
+      if (!Array.isArray(oldQuery)) oldQuery = oldQuery.split(',');
+
+      let queryDisplay = oldQuery.filter(old => old.includes(query));
+      
+      console.log(queryDisplay);
+      
+      submitButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        oldQuery.push(query);
+        localStorage.setItem('oldQuery', oldQuery);
+        form.submit();
+      })
+
+      // let suggestionLink = document.querySelectorAll('.suggestion-link');
+
+      // for (let link of suggestionLink) {
+      //   suggestionBox.removeChild(link);
+      // }
+
+      // if (query) {
+      //   let suggestion;
+      //   for (video of filteredVidz) {
+      //     suggestion = document.createElement('a');
+      //     suggestion.classList.add('suggestion-link');
+      //     suggestion.innerHTML = video.title;
+      //     suggestion.href = video.src;
+      //     suggestionBox.append(suggestion);
+      //   }
+      // }
       appendVidz(filteredVidz, container);
     })
   })
@@ -61,6 +98,10 @@ function removeVidz() {
 
 function titleFilter(array, filter) {
   return array.filter(video => video.title.toLowerCase().includes(filter));
+}
+
+function categoryFilter(array, category) {
+  return array.filter(video => video.category === category);
 }
 
 function shuffleArray(array) {
