@@ -1,5 +1,6 @@
 const container = document.querySelector("main");
 const form = document.querySelector("form");
+const searchBar = document.querySelector("#query");
 const categoryNav = document.querySelector("#category");
 const suggestionBox = document.querySelector("#suggest");
 const submitButton = document.querySelector("#search");
@@ -73,13 +74,25 @@ fetch("data.json")
       }
 
       appendVidz(filteredVidz, container);
+
+      let target = 0;
+      document.body.onkeydown = (e) => {
+        e = e || window.event;
+        if (e.keyCode == "40" || e.keyCode == "38") {
+          suggestionLink = document.querySelectorAll(".suggestion-link");
+          if (e.keyCode == "40" && target < suggestionLink.length) {
+            target++;
+          } else if (e.keyCode == "38" && target > 0) {
+            target--;
+          }
+          if (target === 0) searchBar.focus();
+          else suggestionLink[target - 1].focus();
+        }
+      };
     });
 
     submitButton.addEventListener("click", (e) => {
       e.preventDefault();
-
-      console.log(oldQuery);
-
       oldQuery = oldQuery.filter((old) => old !== query.value);
       oldQuery += "," + query.value;
       if (oldQuery.charAt(0) === ",") oldQuery = oldQuery.substring(1);

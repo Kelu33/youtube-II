@@ -56,6 +56,10 @@ form {
     height: 100%;
 }
 
+#category {
+    overflow: hidden;
+}
+
 button {
     margin: 32px;
     min-width: 120px;
@@ -97,8 +101,9 @@ textarea:focus, input:focus {
     color: var(--bg-color);
     padding-bottom: 1vh;
 }
-.suggestion-link:hover {
-    color: var(--dark-bg-color);
+.suggestion-link:hover, .suggestion-link:focus {
+    background-color: var(--dark-bg-color);
+    color: var(--text-color);
 }
 
 aside {
