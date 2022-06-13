@@ -15,10 +15,26 @@
 </head>
 <body>
     <header>
-        <nav></nav>
+        <nav>
+            <form action="" method="get" >
+                <input type="text" id="query" name="query" placeholder="Rechercher" required >
+                <input type="submit" id="search"  value="🔎">
+                <div id="suggest"></div>
+            </form>
+        </nav>
+        <nav id="category">
+            <button>Gauchiste</button>
+            <button>Tech</button>
+            <button>Musique</button>
+            <button>Economie</button>
+            <button>Asmr</button>
+        </nav>
     </header>
-    <aside>
-        <img id="logo" src="assets/logo.png" alt="logo">        
+    <aside>  
+        <div id="homeLink">    
+            <img id="logo" src="assets/logo.png" alt="logo"> 
+            <a href="/youtube-II"></a>
+        </div>               
     </aside>
     <main></main>    
 </body>
