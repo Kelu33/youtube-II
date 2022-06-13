@@ -12,8 +12,10 @@ else oldQuery = [];
 
 let filter;
 let href = window.location.href.split("?");
-if (href.length > 1)
-  filter = href[1].split("=")[1].split("+").join(" ").toLowerCase();
+if (href.length > 1) {
+  filter = href[1].split("=")[1].toLowerCase();
+  filter = decodeURI(filter);
+}
 
 fetch("data.json")
   .then((response) => response.json())
