@@ -69,18 +69,6 @@ fetch("data.json")
         }
       }
 
-      //
-
-      // if (query) {
-      //   let suggestion;
-      //   for (video of filteredVidz) {
-      //     suggestion = document.createElement("a");
-      //     suggestion.classList.add("suggestion-link");
-      //     suggestion.innerHTML = video.title;
-      //     suggestion.href = video.src;
-      //     suggestionBox.append(suggestion);
-      //   }
-      // }
       appendVidz(filteredVidz, container);
     });
 
