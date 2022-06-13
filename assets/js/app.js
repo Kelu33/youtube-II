@@ -5,12 +5,13 @@ const suggestionBox = document.querySelector("#suggest");
 const submitButton = document.querySelector("#search");
 
 let oldQuery = localStorage.getItem("oldQuery");
-if (oldQuery) oldQuery.split(",");
+if (oldQuery) oldQuery = oldQuery.split(",");
 else oldQuery = [];
 
 let filter;
 let href = window.location.href.split("?");
-if (href.length > 1) filter = href[1].split("=")[1].toLowerCase();
+if (href.length > 1)
+  filter = href[1].split("=")[1].split("+").join(" ").toLowerCase();
 
 fetch("data.json")
   .then((response) => response.json())
@@ -48,8 +49,9 @@ fetch("data.json")
       let query = e.target.value.toLowerCase();
       let filteredVidz = titleFilter(videoList, query);
 
-      if (!Array.isArray(oldQuery)) oldQuery = oldQuery.split(",");
-      matchingOldQuery = oldQuery.filter((old) => old.includes(query));
+      matchingOldQuery = oldQuery.filter((old) =>
+        old.toLowerCase().includes(query)
+      );
 
       let suggestionLink = document.querySelectorAll(".suggestion-link");
 
@@ -58,8 +60,8 @@ fetch("data.json")
       }
 
       if (query) {
+        matchingOldQuery = matchingOldQuery.reverse();
         for (let query of matchingOldQuery) {
-          console.log(query);
           let suggestion;
           suggestion = document.createElement("a");
           suggestion.classList.add("suggestion-link");
@@ -74,6 +76,10 @@ fetch("data.json")
 
     submitButton.addEventListener("click", (e) => {
       e.preventDefault();
+
+      console.log(oldQuery);
+
+      oldQuery = oldQuery.filter((old) => old !== query.value);
       oldQuery += "," + query.value;
       if (oldQuery.charAt(0) === ",") oldQuery = oldQuery.substring(1);
       localStorage.setItem("oldQuery", oldQuery);
