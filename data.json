@@ -9,7 +9,8 @@
         "title": "BLAST, Le souffle de l'info",
         "url": "https://www.youtube.com/c/Blast-info"
       },
-      "info": "107 819 vues . 23 févr. 2022"
+      "info": "107 819 vues . 23 févr. 2022",
+      "category": "Gauchiste"
     },
     {
       "src": "https://www.youtube.com/watch?v=HUf8ySs_4WU&list=PL0H7ONNEUnnsZfw2qDs8qFIJ7JBinF7WS&index=14",
@@ -19,7 +20,8 @@
         "title": "Mediapart",
         "url": "https://www.youtube.com/c/mediapart"
       },
-      "info": "341 878 vues . 30 mai 2022"
+      "info": "341 878 vues . 30 mai 2022",
+      "category": "Gauchiste"
     },
     {
       "src": "https://www.youtube.com/watch?v=1DJ3qTW51FA",
@@ -29,7 +31,8 @@
         "title": "Thinkerview",
         "url": "https://www.youtube.com/c/thinkerview"
       },
-      "info": "643 491 vues . Diffusée en direct le 24 sept. 2021"
+      "info": "643 491 vues . Diffusée en direct le 24 sept. 2021",
+      "category": "Tech"
     },
     {
       "src": "https://www.youtube.com/watch?v=mPZkdNFkNps",
@@ -39,7 +42,8 @@
         "title": "Relaxing Ambience ASMR",
         "url": "https://www.youtube.com/c/RelaxingAmbienceASMR"
       },
-      "info": "58331730 vues . 16 janv. 2020"
+      "info": "58331730 vues . 16 janv. 2020",
+      "category": "Asmr"
     },
     {
       "src": "https://www.youtube.com/watch?v=jTe0-uAdRdU",
@@ -49,7 +53,8 @@
         "title": "Burning Idol",
         "url": "https://www.youtube.com/c/BurningIdol"
       },
-      "info": "667 476 vues . 20 sept. 2011"
+      "info": "667 476 vues . 20 sept. 2011",
+      "category": "Musique"
     },
     {
       "src": "https://www.youtube.com/watch?v=oeyvAnCVKuU",
@@ -59,7 +64,8 @@
         "title": "BG Ollie",
         "url": "https://www.youtube.com/channel/UC5-umfrfqPvDvWCYHJGYtpA"
       },
-      "info": "6 304 vues . 10 mars 2021"
+      "info": "6 304 vues . 10 mars 2021",
+      "category": "Musique"
     },
     {
       "src": "https://www.youtube.com/watch?v=HIZ16f6hQ-k",
@@ -69,7 +75,8 @@
         "title": "LEntourloop",
         "url": "https://www.youtube.com/c/LEntourloop"
       },
-      "info": "592632 vues . Sortie le 30 mars 2022"
+      "info": "592632 vues . Sortie le 30 mars 2022",
+      "category": "Musique"
     },
     {
       "src": "https://www.youtube.com/watch?v=o3t3Uq_dH-s",
@@ -79,7 +86,8 @@
         "title": "horror humanum est",
         "url": "https://www.youtube.com/c/horrorhumanumest"
       },
-      "info": "696 231 vues . 5 avr. 2018"
+      "info": "696 231 vues . 5 avr. 2018",
+      "category": "Gauchiste"
     },
     {
       "src": "https://www.youtube.com/watch?v=MYDuy7wM8Gk",
@@ -89,7 +97,8 @@
         "title": "Cinemassacre",
         "url": "https://www.youtube.com/AngryNintendoNerd"
       },
-      "info": "14 027 271 vues"
+      "info": "14 027 271 vues",
+      "category": "Tech"
     },
     {
       "src": "https://www.youtube.com/watch?v=S-W0NX97DB0",
@@ -99,7 +108,8 @@
         "title": "ScienceEtonnante",
         "url": "https://www.youtube.com/c/ScienceEtonnante"
       },
-      "info": "1 519 077 vues8 déc. 2017"
+      "info": "1 519 077 vues8 déc. 2017",
+      "category": "Tech"
     },
     {
       "src": "https://www.youtube.com/watch?v=zqTRdSUhgQw",
@@ -109,7 +119,8 @@
         "title": "Heu?reka",
         "url": "https://www.youtube.com/c/HeurekaFinanceEco/videos"
       },
-      "info": "215 268 vues . 27 sept. 2021"
+      "info": "215 268 vues . 27 sept. 2021",
+      "category": "Economie"
     },
     {
       "src": "https://www.youtube.com/watch?v=yPDC77jf81Q",
@@ -119,6 +130,7 @@
         "title": "Bazar du Grenier",
         "url": "https://www.youtube.com/c/BazarduGrenier"
       },
-      "info": "2 784 128 vues . 23 déc. 2019"
+      "info": "2 784 128 vues . 23 déc. 2019",
+      "category": "Tech"
     }
 ]

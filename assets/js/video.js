@@ -1,10 +1,11 @@
 class Video {
-  constructor(src, title, thumbnail, account, info) {
+  constructor(src, title, thumbnail, account, info, category) {
     this.src = src;
     this.title = title;
     this.thumbnail = thumbnail;
     this.account = account;
     this.info = info;
+    this.category = category;
   }
   display(target) {
     const vidWrap = document.createElement("div");
@@ -22,6 +23,7 @@ class Video {
 
     const title = document.createElement("h2");
     title.innerHTML = this.title;
+    title.title = this.title;
     vidWrap.append(title);
 
     const account = document.createElement("a");

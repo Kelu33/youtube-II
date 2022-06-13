@@ -63,7 +63,7 @@ button {
     color: var(--text-color);
     border-radius: 25px;
     background-color: var(--border-color);
-    border: solid 1px var(--text-color);
+    border: solid 0.5px var(--text-color);
 }
 
 #search:focus-visible {
@@ -117,6 +117,8 @@ main {
 
 h2 {
     font-size: 1rem;
+    position: relative;
+    z-index: 9;
     max-height: 6vh;
     text-overflow: ellipsis;
     overflow: hidden; 
@@ -126,7 +128,7 @@ h2 {
 a {
     font-size: 1rem;
     position: relative;
-    z-index: 9;
+    z-index: 3;
     color: #aaa;
     text-decoration: none;
 }

@@ -1,5 +1,6 @@
 const container = document.querySelector("main");
 const form = document.querySelector('form');
+const categoryNav = document.querySelector('#category');
 
 let filter;
 let href = window.location.href.split('?');
@@ -11,42 +12,52 @@ fetch("data.json")
     videoDataList = shuffleArray(videoDataList);
     let videoList = [];
     let video;
-
     for (let videoData of videoDataList) {
       video = new Video(
         videoData.src,
         videoData.title,
         videoData.thumbnail,
         videoData.account,
-        videoData.info
+        videoData.info,
+        videoData.category,
+
       );
       videoList.push(video);      
-    }
-    
+    }    
     if (filter) {
       videoList = titleFilter(videoList, filter);
-    }    
-    for (let filtredVid of videoList) {
-      filtredVid.display(container);
     }
+    appendVidz(videoList, container);    
     
+    categoryNav.addEventListener('click', (e) => {
+      e.preventDefault();
+      removeVidz();
+      let filteredVidz = videoList.filter(video => video.category === e.target.innerText);
+      appendVidz(filteredVidz, container);
+    })
+
     form.addEventListener('input', (e) => {
       e.preventDefault();
-
-      let wrapList = document.querySelectorAll('.video-wrap');
-      for (let wrap of wrapList) {
-        container.removeChild(wrap);
-      }
-
+      removeVidz();
       let query = e.target.value.toLowerCase();
-      let filtredVidz = titleFilter(videoList, query);      
-
-      for (let video of filtredVidz) {
-        video.display(container);
-      }
+      let filteredVidz = titleFilter(videoList, query);        
+      appendVidz(filteredVidz, container);
     })
   })
   .catch((error) => console.log(error));
+
+function appendVidz(videoList, target) {
+  for (let video of videoList) {
+    video.display(target);
+  }
+}
+
+function removeVidz() {
+  let wrapList = document.querySelectorAll('.video-wrap');
+  for (let wrap of wrapList) {
+    container.removeChild(wrap);
+  }
+}
 
 function titleFilter(array, filter) {
   return array.filter(video => video.title.toLowerCase().includes(filter));
